@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model("User", userSchema);
 
 // Handle form submission
-app.post("/", (req, res) => {
+app.post("/submit", (req, res) => {
   const { name, age } = req.body;
 
   // Create a new user document
@@ -42,9 +42,9 @@ app.post("/", (req, res) => {
   newUser
     .save()
     .then(() => {
-      res.send("User data saved successfully!");
-        // Redirect back to the form page
-        res.redirect("/");
+      console.log("User data saved successfully!");
+      // Redirect back to the form page
+      res.redirect("/");
     })
     .catch((err) => {
       console.error("Error saving data:", err);
