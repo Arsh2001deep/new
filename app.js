@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model("User", userSchema);
 
 // Handle form submission
-app.post("/submit", (req, res) => {
+app.post("/", (req, res) => {
   const { name, age } = req.body;
 
   // Create a new user document
